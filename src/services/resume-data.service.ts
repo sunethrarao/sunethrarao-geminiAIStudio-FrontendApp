@@ -22,10 +22,21 @@ export interface Project {
   technologies: string[];
 }
 
+export interface SiteStats {
+  viewers: number;
+  rating: number;
+  totalRatings: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeDataService {
+  // Simulated state
+  private _viewers = 14205;
+  private _ratingSum = 628; 
+  private _totalRatings = 128; // Avg ~4.9
+
   getProfile() {
     return {
       name: 'Sunethra Krishnaraj',
@@ -75,17 +86,17 @@ export class ResumeDataService {
   getProjects(): Project[] {
     return [
       {
-        name: 'Immigration Services Portal',
-        category: 'Legal Tech',
-        summary: 'Objective: Modernize a legacy immigration platform for global scale. Role: Refactored the UI architecture and implemented a Micro Frontend strategy. Impact: Modularized the codebase, significantly reducing regression testing time, and authored the architecture for a new AI-driven letter drafting tool.',
-        technologies: ['Angular', 'Micro Frontends', 'AI Integration', 'TypeScript']
-      },
-      {
         name: 'Global FMCG Transformation',
         category: 'Digital Transformation',
         summary: 'Objective: Accelerate the digital presence of a major consumer goods company. Role: Led end-to-end front-end strategy and rapidly scaled the engineering team. Impact: Built a 20+ member team in two weeks and delivered a robust, scalable UI platform ahead of schedule.',
         technologies: ['Angular', 'Nx Monorepo', 'RxJS', 'Scrum']
       },
+      {
+        name: 'Immigration Services Portal',
+        category: 'Legal Tech',
+        summary: 'Objective: Modernize a legacy immigration platform for global scale. Role: Refactored the UI architecture and implemented a Micro Frontend strategy. Impact: Modularized the codebase, significantly reducing regression testing time, and authored the architecture for a new AI-driven letter drafting tool.',
+        technologies: ['Angular', 'Micro Frontends', 'AI Integration', 'TypeScript']
+      },      
       {
         name: 'Retail Convenience Platform',
         category: 'E-Commerce',
@@ -187,5 +198,24 @@ export class ResumeDataService {
       'Inspiring Innovator Award – FY22 Q3',
       'Power App Hackathon Jury Award – FY22 Q3'
     ];
+  }
+
+  // Site Stats Logic
+  incrementViewers(): void {
+    this._viewers++;
+  }
+
+  getSiteStats(): SiteStats {
+    return {
+      viewers: this._viewers,
+      rating: this._ratingSum / this._totalRatings,
+      totalRatings: this._totalRatings
+    };
+  }
+
+  submitRating(score: number): SiteStats {
+    this._ratingSum += score;
+    this._totalRatings++;
+    return this.getSiteStats();
   }
 }
