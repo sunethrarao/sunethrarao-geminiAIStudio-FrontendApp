@@ -115,7 +115,7 @@ export class ResumeDataService {
   getExperience(): Experience[] {
     return [
       {
-        company: 'Global Professional Services Firm',
+        company: 'Accenture Solutions Pvt Ltd',
         role: 'Application Development Associate Manager',
         period: 'Jun 2019 – Present',
         description: 'Delivered 8-10 successful projects on scalable platforms. Performed roles including Developer, Team Lead, SME, and Technical Delivery Manager.',
@@ -129,7 +129,7 @@ export class ResumeDataService {
         ]
       },
       {
-        company: 'Global IT Services Firm',
+        company: 'Cognizant Technology Solutions',
         role: 'Technology Lead',
         period: 'Nov 2013 – Jun 2019',
         description: 'Lead developer for major client accounts focusing on marketing and content delivery.',
@@ -140,7 +140,7 @@ export class ResumeDataService {
         ]
       },
       {
-        company: 'Global Internet Services Company',
+        company: 'Yahoo! Software Development Pvt Ltd',
         role: 'Web Engineer',
         period: 'Apr 2011 – Jun 2013',
         description: 'Designed, developed, and tested web enhancements.',
@@ -150,7 +150,7 @@ export class ResumeDataService {
         ]
       },
       {
-        company: 'Enterprise Technology Giant',
+        company: 'Hewlett Packard Enterprise',
         role: 'Technical Support Engineer',
         period: 'Nov 2009 – Apr 2011',
         description: 'Technical support and web improvements.',
