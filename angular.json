@@ -21,7 +21,8 @@
           },
           "configurations": {
             "production": {
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/sunethrarao-geminiAIStudio-FrontendApp/"
             },
             "development": {
               "optimization": false,
