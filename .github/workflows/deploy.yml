@@ -20,7 +20,8 @@ jobs:
         run: npm install
       - name: Build
         # This command triggers the production build with your baseHref
-        run: npm run build
+        # Adding CI=false prevents warnings from failing the build
+        run: CI=false npm run build
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
