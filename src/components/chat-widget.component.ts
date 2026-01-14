@@ -29,7 +29,7 @@ import { ResumeDataService } from '../services/resume-data.service';
           </div>
 
           <!-- Messages Area -->
-          <div #scrollContainer class="flex-1 overflow-y-auto p-3 md:p-4 bg-slate-50 chat-scroll space-y-4">
+          <div #scrollContainer class="flex-1 overflow-y-auto overscroll-y-contain p-3 md:p-4 bg-slate-50 chat-scroll space-y-4">
             @for (msg of messages(); track $index) {
               <div class="flex" [class.justify-end]="msg.role === 'user'">
                 <div [class]="msg.role === 'user' 
