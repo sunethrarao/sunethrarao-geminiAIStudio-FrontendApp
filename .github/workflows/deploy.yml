@@ -17,7 +17,8 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install
+        # Change this line to include the legacy flag
+        run: npm install --legacy-peer-deps
       - name: Build
         # This command triggers the production build with your baseHref
         # Adding CI=false prevents warnings from failing the build
